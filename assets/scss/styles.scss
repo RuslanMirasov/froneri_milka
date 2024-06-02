@@ -1,0 +1,582 @@
+// --------------------------------------------------------- FONTS
+
+@font-face {
+  font-family: 'Geologica';
+  src: url('../fonts/Geologica-Black.woff2') format('woff2'),
+    url('../fonts/Geologica-Black.woff') format('woff'),
+    url('../fonts/Geologica-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geologica';
+  src: url('../fonts/Geologica-Light.woff2') format('woff2'),
+    url('../fonts/Geologica-Light.woff') format('woff'),
+    url('../fonts/Geologica-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geologica';
+  src: url('../fonts/Geologica-ExtraBold.woff2') format('woff2'),
+    url('../fonts/Geologica-ExtraBold.woff') format('woff'),
+    url('../fonts/Geologica-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+// --------------------------------------------------------- RESET
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.oreo-main {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Geologica';
+  color: #fff;
+  background: #074eb6;
+  font-weight: normal;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: rgb(61, 170, 229);
+    background: radial-gradient(circle, rgba(61, 170, 229, 1) 0%, rgba(7, 78, 182, 1) 70%);
+    margin: 0 auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Geologica';
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.oreoHeader {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 85px;
+  background: #fff;
+  z-index: 5;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  @media screen and (max-width: 991px) {
+    height: 58px;
+    position: relative;
+  }
+}
+
+// --------------------------------------------------------- SECTION
+
+.section {
+  display: block;
+  position: relative;
+}
+
+.section-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  z-index: 1;
+  @media screen and (max-width: 767px) {
+    padding: 0px 20px;
+    max-width: 480px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding: 0px 30px;
+    max-width: 768px;
+  }
+  @media screen and (min-width: 1280px) {
+    max-width: 1180px;
+  }
+  img {
+    display: block;
+    object-fit: cover;
+  }
+}
+
+// --------------------------------------------------------- SECTION HERO
+
+.oreo-hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  padding-top: 85px;
+  height: 100vh;
+  min-height: 800px;
+  max-height: 860px;
+  .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 0px;
+    height: calc(100vh - 58px);
+  }
+  @media screen and (max-width: 1279px) {
+    height: auto;
+    max-height: 1024px;
+    min-height: auto;
+    .section-container {
+      align-content: flex-start;
+    }
+  }
+}
+
+.oreo-hero__bg {
+  position: absolute;
+  z-index: 0;
+  &.oreo-hero__bg--horn {
+    transform: translate(-70%, 5%);
+  }
+  &.oreo-hero__bg--eskimo {
+    transform: translate(70%, 5%);
+  }
+  @media screen and (max-width: 1279px) {
+    position: relative;
+    &.oreo-hero__bg--horn {
+      width: 375px;
+      max-width: 100%;
+      transform: translate(0%, 0%);
+      margin: 30px 0px 20px 0px;
+      img {
+        width: 100%;
+      }
+    }
+    &.oreo-hero__bg--eskimo {
+      display: none;
+    }
+  }
+}
+
+.oreo-hero__content {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 480px;
+  text-align: center;
+  user-select: none;
+  z-index: 2;
+}
+
+.oreo-title-h1 {
+  display: block;
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  span {
+    display: inline-flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-top: 16px;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      height: 44px;
+    }
+    &:before {
+      left: 100%;
+      margin-left: 14px;
+      width: 62px;
+      background: url('../img/subtitle_right.svg') no-repeat center center;
+      background-size: cover;
+    }
+    &:after {
+      right: 100%;
+      margin-right: 14px;
+      width: 52px;
+      background: url('../img/subtitle_left.svg') no-repeat center center;
+      background-size: cover;
+    }
+  }
+  @media screen and (max-width: 1279px) {
+    font-size: 40px;
+    span {
+      font-size: 34px;
+      margin-top: 6px;
+      &:before,
+      &:after {
+        height: 30px;
+      }
+      &:before {
+        margin-left: 10px;
+        width: 40px;
+      }
+      &:after {
+        margin-right: 10px;
+        width: 36px;
+      }
+    }
+  }
+  @media screen and (max-width: 374px) {
+    font-size: 36px;
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+.oreo-logo {
+  width: 100%;
+  max-width: 350px;
+  margin: 16px auto 0px auto;
+  @media screen and (max-width: 1279px) {
+    max-width: 236px;
+    margin: 12px auto 0px auto;
+  }
+}
+
+.oreo-hero-button {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
+  @media screen and (max-width: 1279px) {
+    bottom: 20px;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: 36px;
+    transform: translate(0%, 0%);
+    margin-top: 40px;
+    img {
+      height: 100%;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+// --------------------------------------------------------- SECTION OREO ABOUT
+
+.oreo-about {
+  padding: 100px 0px 0px 0px;
+  @media screen and (max-width: 1279px) {
+    padding: 60px 0px;
+  }
+}
+
+.titleBox {
+  .title,
+  .subtitle {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .title {
+    font-weight: 800;
+  }
+  .subtitle {
+    font-weight: 300;
+  }
+  @media screen and (max-width: 1279px) {
+    .title,
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+}
+
+.choco {
+  position: absolute;
+}
+
+.production-image {
+  position: relative;
+}
+
+.production {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: center;
+  list-style: none;
+  text-align: center;
+  user-select: none;
+  @media screen and (max-width: 1279px) {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    gap: 30px;
+  }
+  li {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    @media screen and (max-width: 1279px) {
+      .production-image {
+        img {
+          width: 100%;
+        }
+      }
+    }
+    //product 1
+    &:nth-child(1) {
+      max-width: 460px;
+      // border: 1px solid blueviolet;
+      gap: 20px;
+      order: 2;
+      .choco {
+        left: 80%;
+        bottom: 40%;
+      }
+      @media screen and (max-width: 1279px) {
+        max-width: 100%;
+        // border: 1px solid blueviolet;
+        gap: 20px;
+        order: 1;
+        .production-image {
+          max-width: 204px;
+          margin-right: auto;
+        }
+        .choco {
+          width: 209px;
+          left: 50%;
+          bottom: 10%;
+        }
+      }
+    }
+
+    //product 2
+    &:nth-child(2) {
+      max-width: 330px;
+      // border: 1px solid lime;
+      gap: 8px;
+      order: 1;
+      margin-top: 200px;
+      .production-image {
+        transform: translate(14%, 0%);
+      }
+      .choco {
+        left: 65%;
+        top: 4%;
+        transform: translate(0%, 0%);
+      }
+      @media screen and (max-width: 1279px) {
+        max-width: 100%;
+        order: 3;
+        gap: 20px;
+        margin-top: 0px;
+        .titleBox {
+          width: 170px;
+          margin-left: auto;
+        }
+        .production-image {
+          width: 270px;
+          margin-right: auto;
+          margin-top: -100px;
+          margin-bottom: -40px;
+          transform: translate(-4%, 0%);
+        }
+        .choco {
+          left: auto;
+          right: 0px;
+          top: auto;
+          bottom: 0px;
+          width: 190px;
+          transform: translate(-8%, -25%);
+        }
+      }
+    }
+
+    //product 3
+    &:nth-child(3) {
+      max-width: 290px;
+      // border: 1px solid yellow;
+      order: 3;
+      align-self: flex-end;
+      margin-bottom: 100px;
+      .production-image {
+        position: absolute;
+        right: 28%;
+        top: 0%;
+        transform: translate(0%, -60%);
+      }
+      .choco {
+        top: 0px;
+        transform: translate(-340%, -10%);
+      }
+      @media screen and (max-width: 1279px) {
+        max-width: 100%;
+        order: 2;
+        margin-bottom: 0px;
+        justify-content: flex-start;
+        .titleBox {
+          width: 142px;
+        }
+        .production-image {
+          width: 324px;
+          position: relative;
+          margin-left: auto;
+          margin-top: -100px;
+          right: 0%;
+          top: 0%;
+          transform: translate(20px, 0%);
+        }
+        .choco {
+          width: 46%;
+          top: auto;
+          bottom: 0px;
+          transform: translate(-24%, 12%);
+        }
+      }
+    }
+
+    //product 4
+    &:nth-child(4) {
+      .titleBox {
+        max-width: 230px;
+      }
+      .choco {
+        position: relative;
+        transform: translate(0%, -40%);
+      }
+      transform: translate(-0%, -5%);
+      justify-content: flex-start;
+      gap: 40px;
+      // border: 1px solid tomato;
+      order: 4;
+      @media screen and (max-width: 1279px) {
+        transform: translate(-0%, 0%);
+        justify-content: center;
+        gap: 20px;
+        .titleBox {
+          max-width: 210px;
+          margin-left: auto;
+        }
+        .production-image {
+          width: 260px;
+          position: relative;
+          margin-right: auto;
+          margin-top: -60px;
+          transform: translate(-4%, 0%);
+        }
+        .choco {
+          width: 174px;
+          right: 0px;
+          bottom: 0px;
+          position: absolute;
+          transform: translate(20%, 0%);
+        }
+      }
+    }
+  }
+}
+
+// --------------------------------------------------------- SECTION OREO FOOTER
+
+.oreo-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .section-container {
+    position: absolute;
+    max-width: 100%;
+    padding: 0px 30px;
+    bottom: 0px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    @media screen and (max-width: 767px) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.oreo-footer__bg {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+img.oreo-footer__image {
+  width: 200px;
+  margin: auto 0px;
+  @media screen and (max-width: 1279px) {
+    width: 150px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.copy {
+  display: flex;
+  width: 100%;
+  align-self: flex-end;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
+}
