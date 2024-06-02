@@ -81,9 +81,17 @@ scrollSections.forEach(scrollBlock => {
 });
 
 const handleScrollChange = (element, slide) => {
+  const index = Number(slide - 1);
   const wayBox = element.querySelector('[data-rails]');
+  const slides = element.querySelectorAll('[data-slide]');
   wayBox.style.transition = `${scrollSet.timing}ms ease 0s`;
   const elementHeight = element.offsetHeight;
   const way = elementHeight * (slide - 1);
   wayBox.style.transform = `translate(0px, -${way}px)`;
+
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  });
+  console.log(index);
+  slides[index].classList.add('active');
 };
