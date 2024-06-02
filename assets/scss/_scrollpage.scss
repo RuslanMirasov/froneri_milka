@@ -1,0 +1,25 @@
+[data-scrollpage] {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.screen1 {
+  height: 100vh;
+  background: green;
+  padding: 50px 0px;
+}
+
+.screen2 {
+  height: 100vh;
+  background: black;
+  padding: 50px 0px;
+}
+
+.screen3 {
+  height: 100vh;
+  background: tomato;
+  padding: 50px 0px;
+}
