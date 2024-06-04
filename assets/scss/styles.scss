@@ -1,6 +1,35 @@
-@import 'scrollpage';
-
 // --------------------------------------------------------- FONTS
+@font-face {
+  font-family: 'Congenial';
+  src: url('../fonts/CongenialCyrillicBETA-Medium.woff2') format('woff2'),
+    url('../fonts/CongenialCyrillicBETA-Medium.woff') format('woff'),
+    url('../fonts/CongenialCyrillicBETA-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Congenial';
+  src: url('../fonts/CongenialCyrillicBETA-Light.woff2') format('woff2'),
+    url('../fonts/CongenialCyrillicBETA-Light.woff') format('woff'),
+    url('../fonts/CongenialCyrillicBETA-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'lorrach';
+  src: url('../fonts/LORRACHBETA-Heavy.woff2') format('woff2'),
+    url('../fonts/LORRACHBETA-Heavy.woff') format('woff'),
+    url('../fonts/LORRACHBETA-Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import 'scrollpage';
 
 // --------------------------------------------------------- RESET
 
@@ -10,18 +39,19 @@
   box-sizing: border-box;
 }
 
-.oreo-main {
+.milka-main {
   display: block;
   position: relative;
   width: 100%;
   height: auto;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: 'Arial';
+  font-family: 'lorrach';
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
+  background: #776cb1;
   font-weight: normal;
   overflow: hidden;
 
@@ -31,7 +61,7 @@
   h4,
   h5,
   h6 {
-    font-family: 'Arial';
+    font-family: 'lorrach';
   }
 
   img {
@@ -74,7 +104,300 @@
 
 // --------------------------------------------------------- SECTION HERO
 
+.section-hero {
+  display: flex;
+  height: auto;
+  min-height: 100vh;
+  z-index: 1;
+  .section-container {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 26px;
+    height: auto;
+    transform: translate(0%, 30%);
+    transition: 1000ms ease 0s;
+  }
+}
+
+.active {
+  .section-container {
+    transform: translate(0%, 0%);
+  }
+}
+
+.milka-logo {
+  max-width: 38%;
+  transform: translate(0%, -44%);
+  transition: 1000ms ease 0s;
+}
+
+.active {
+  .milka-logo {
+    transform: translate(0%, -0%);
+    transition: 1000ms ease 0s;
+  }
+}
+
+.cow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 588px;
+  position: absolute;
+  transform: translate(-64%, 0%);
+  transition: 1000ms ease 0s;
+  img {
+    display: block;
+    &.cow_image {
+      margin-bottom: -40px;
+      margin-left: 100px;
+      z-index: 2;
+    }
+  }
+}
+.active .cow {
+  transform: translate(-64%, 44%);
+}
+
+.milka-title {
+  display: inline-block;
+  max-width: 720px;
+  font-family: 'Congenial';
+  text-transform: uppercase;
+  color: #86cbe9;
+  font-size: 106px;
+  font-weight: 500;
+  line-height: 68px;
+  span {
+    font-size: 54px;
+    &:first-child {
+      font-weight: 300;
+    }
+    &:last-child {
+      color: #fff;
+    }
+  }
+}
+
+.milka-scrolldown {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  margin-left: -25px;
+  background: none;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: 1000ms ease 0s;
+  border: none;
+  &.up {
+    transform: rotate(180deg);
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.section-about {
+  height: 100vh;
+  z-index: 2;
+}
+
+.milka-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  transition: 1000ms ease 0s;
+  overflow: hidden;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.sun {
+  transform: translate(0px, 68%) scaleY(1);
+}
+
+.field1 {
+  transform: translate(0px, 10%);
+  img {
+    object-fit: fill;
+    height: 100%;
+  }
+}
+.field2 {
+  transform: translate(0px, 20%);
+
+  img {
+    object-fit: fill;
+  }
+}
+
+.text {
+  width: 96%;
+  left: auto;
+  right: 0px;
+  transform: translate(0px, 0%);
+  height: auto;
+  img {
+    object-fit: cover;
+  }
+}
+.gora1 {
+  transform: translate(0px, 55%);
+  img {
+    object-fit: fill;
+  }
+}
+
+.gora2 {
+  transform: translate(0px, 75%);
+  img {
+    object-fit: fill;
+  }
+}
+
+.clouds {
+  transform: translate(0px, 84%);
+  img {
+    object-fit: fill;
+  }
+}
+
+.active {
+  .field1,
+  .field2,
+  .text,
+  .gora1,
+  .gora2,
+  .clouds {
+    transform: translate(0px, 0%);
+  }
+  .sun {
+    transform: translate(0px, 50%) scaleY(0);
+  }
+}
+
+// --------------------------------------------------------- SECTION ABOUT
+
+.section-about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-end;
+  .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    max-width: 100%;
+    height: 100%;
+    padding: 20px 50px;
+  }
+}
+
+.about-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  width: 50%;
+  height: 100%;
+  &:first-child {
+    align-content: center;
+    .about-text-content {
+      margin-top: 30%;
+    }
+  }
+  &:nth-child(2) {
+    justify-content: center;
+    .about-text-content {
+      margin-bottom: 5%;
+    }
+  }
+}
+
+.about-text-content {
+  display: block;
+  position: relative;
+  max-width: 590px;
+}
+
+.milka-about-title {
+  display: inline-block;
+  width: auto;
+  max-width: 590px;
+  font-family: 'lorrach';
+  font-size: 44.82px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  span {
+    font-size: 36px;
+  }
+  b,
+  span {
+    background: #776cb1;
+    padding: 10px 12px 6px 12px;
+  }
+}
+
+.milka-subtitle {
+  display: inline-block;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1.2;
+  font-family: 'Congenial';
+  margin-top: 24px;
+}
+
+img.milka-ice-image {
+  display: none;
+  position: relative;
+  margin-bottom: -64px;
+  width: auto;
+  max-width: 100%;
+}
+
+.footer_logo {
+  display: block;
+  position: absolute;
+  bottom: 40px;
+}
+
+.copy {
+  display: block;
+  width: 100%;
+  text-align: right;
+  font-family: 'Congenial';
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16.8px;
+  margin-top: auto;
+}
+// --------------------------------------------------------- SECTION FOOTER
+
 .milka-footer {
-  background: rgb(70, 70, 70);
-  padding: 60px 0px;
+  background: #fff;
+  padding: 20px 50px 16px 50px;
+  svg {
+    display: block;
+  }
 }

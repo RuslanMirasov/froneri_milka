@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Congenial';
+  src: url('../fonts/CongenialCyrillicBETA-Medium.woff2') format('woff2'),
+    url('../fonts/CongenialCyrillicBETA-Medium.woff') format('woff'),
+    url('../fonts/CongenialCyrillicBETA-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Congenial';
+  src: url('../fonts/CongenialCyrillicBETA-Light.woff2') format('woff2'),
+    url('../fonts/CongenialCyrillicBETA-Light.woff') format('woff'),
+    url('../fonts/CongenialCyrillicBETA-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'lorrach';
+  src: url('../fonts/LORRACHBETA-Heavy.woff2') format('woff2'),
+    url('../fonts/LORRACHBETA-Heavy.woff') format('woff'),
+    url('../fonts/LORRACHBETA-Heavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

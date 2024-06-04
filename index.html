@@ -10,30 +10,94 @@
     <title>Froneri | Milka</title>
   </head>
   <body>
-    <main class="oreo-main">
-      <!-- Section Hero -->
+    <main class="milka-main">
       <div data-scrollpage data-start="1">
         <div data-rails>
-          <!--SECTION 1-->
-          <section class="section screen1" data-slide="1">
+          <!--SECTION HERO-->
+          <section class="section section-hero active" data-slide="1">
+            <picture class="milka-bg sun">
+              <source srcset="./assets/img/sun.png" media="(max-width: 767px)" />
+              <img src="./assets/img/sun.png" alt="Milka" />
+            </picture>
+            <picture class="milka-bg clouds">
+              <source srcset="./assets/img/clouds.png" media="(max-width: 767px)" />
+              <img src="./assets/img/clouds.png" alt="Milka" />
+            </picture>
+            <picture class="milka-bg gora2">
+              <source srcset="./assets/img/gora2.png" media="(max-width: 767px)" />
+              <img src="./assets/img/gora2.png" alt="Milka" />
+            </picture>
+            <picture class="milka-bg gora1">
+              <source srcset="./assets/img/gora1.png" media="(max-width: 767px)" />
+              <img src="./assets/img/gora1.png" alt="Milka" />
+            </picture>
+
             <div class="section-container">
-              <h1>HELLO WORLD</h1>
+              <img src="./assets/img/logo.svg" alt="Milka" width="504" class="milka-logo" />
+              <h1 class="milka-title">мороженое, <span>oкутанное</span> <span>нежностью</span></h1>
+              <div class="cow">
+                <img src="./assets/img/cow.png" alt="Milka cow" class="cow_image" />
+                <img src="./assets/img/hill.png" alt="Milka hill" class="hill_image" />
+              </div>
             </div>
           </section>
-          <!--SECTION 2-->
-          <section class="section screen2" data-slide="2">
+          <!--SECTION ABOUT-->
+          <section class="section section-about" data-slide="2">
+            <picture class="milka-bg field2">
+              <source srcset="./assets/img/field2.png" media="(max-width: 767px)" />
+              <img src="./assets/img/field2.png" alt="Milka" />
+            </picture>
+            <picture class="milka-bg field1">
+              <source srcset="./assets/img/field1.png" media="(max-width: 767px)" />
+              <img src="./assets/img/field1.png" alt="Milka" />
+            </picture>
+            <picture class="milka-bg text">
+              <source srcset="./assets/img/text.png" media="(max-width: 767px)" />
+              <img src="./assets/img/text.png" alt="Milka" />
+            </picture>
             <div class="section-container">
-              <h2>Section 2</h2>
+              <div class="about-text">
+                <div class="about-text-content">
+                  <h2 class="milka-about-title">
+                    <b>Ванильное мороженое</b> <br /><span>и молочный шоколад</span>
+                  </h2>
+                  <p class="milka-subtitle">
+                    Milka Классическая — ванильное мороженое, <br />
+                    покрытое нежным молочным шоколадом Milka <br />
+                    с шоколадными прослойками внутри
+                  </p>
+                  <img src="./assets/img/ice.png" alt="Milka ice" class="milka-ice-image" />
+                </div>
+              </div>
+              <div class="about-text">
+                <div class="about-text-content">
+                  <h2 class="milka-about-title"><b>Лесные ягоды</b></h2>
+                  <p class="milka-subtitle">
+                    Milka Лесные ягоды — сливочное мороженое, <br />
+                    покрытое нежным молочным шоколадом Milka <br />
+                    и ягодами черники с наполнителем <br />
+                    из спелых лесных ягод
+                  </p>
+                </div>
+              </div>
+
+              <img src="./assets/img/footer_logo.png" alt="Milka" class="footer_logo" />
+
+              <p class="copy">
+                Milka — торговая марка группы компаний Mondelēz International, используемая по лицензии
+              </p>
             </div>
           </section>
         </div>
+        <button class="milka-scrolldown down">
+          <img src="./assets/img/scrolldown.gif" alt="Milka" />
+        </button>
       </div>
-
       <!-- Section Footer -->
       <section class="section milka-footer">
-        <div class="section-container">
-          <h1>Footer</h1>
-        </div>
+        <a href="./">
+          <img src="./assets/img/froneri_logo.svg" alt="Milka" width="140" height="40" />
+        </a>
       </section>
     </main>
     <script src="./assets/js/scripts.js" type="module"></script>

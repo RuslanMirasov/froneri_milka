@@ -1,4 +1,6 @@
 const scrollSections = document.querySelectorAll('[data-scrollpage]');
+const milkaScrollBlock = document.querySelector('[data-scrollpage]');
+const milkaScrolldownBtn = document.querySelector('.milka-scrolldown');
 const main = document.querySelector('main');
 
 const scrollSet = {
@@ -81,6 +83,7 @@ scrollSections.forEach(scrollBlock => {
 });
 
 const handleScrollChange = (element, slide) => {
+  element.dataset.start = slide;
   const index = Number(slide - 1);
   const wayBox = element.querySelector('[data-rails]');
   const slides = element.querySelectorAll('[data-slide]');
@@ -92,6 +95,28 @@ const handleScrollChange = (element, slide) => {
   slides.forEach(slide => {
     slide.classList.remove('active');
   });
-  console.log(index);
   slides[index].classList.add('active');
+
+  if (index > 0) {
+    milkaScrolldownBtn.classList.remove('down');
+    milkaScrolldownBtn.classList.add('up');
+  } else {
+    milkaScrolldownBtn.classList.remove('up');
+    milkaScrolldownBtn.classList.add('down');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 };
+
+milkaScrolldownBtn.addEventListener('click', function () {
+  const btn = this;
+  if (btn.classList.contains('down')) {
+    btn.classList.remove('down');
+    btn.classList.add('up');
+    handleScrollChange(milkaScrollBlock, 2);
+    return;
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  btn.classList.remove('up');
+  btn.classList.add('down');
+  handleScrollChange(milkaScrollBlock, 1);
+});
