@@ -6,7 +6,7 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "Congenial";
+  font-family: "Congenial-light";
   src: url("../fonts/CongenialCyrillicBETA-Light.woff2") format("woff2"), url("../fonts/CongenialCyrillicBETA-Light.woff") format("woff"), url("../fonts/CongenialCyrillicBETA-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
@@ -52,14 +52,6 @@
   background: #776cb1;
   font-weight: normal;
   overflow: hidden;
-}
-.milka-main h1,
-.milka-main h2,
-.milka-main h3,
-.milka-main h4,
-.milka-main h5,
-.milka-main h6 {
-  font-family: "lorrach";
 }
 .milka-main img {
   display: block;
@@ -125,6 +117,11 @@
   transform: translate(0%, 30%);
   transition: 1000ms ease 0s;
 }
+@media screen and (max-width: 1439px) {
+  .section-hero .section-container {
+    padding: 30px;
+  }
+}
 
 .active .section-container {
   transform: translate(0%, 0%);
@@ -134,6 +131,11 @@
   max-width: 38%;
   transform: translate(0%, -44%);
   transition: 1000ms ease 0s;
+}
+@media screen and (max-width: 1439px) {
+  .milka-logo {
+    max-width: 342px;
+  }
 }
 
 .active .milka-logo {
@@ -160,6 +162,19 @@
   margin-left: 100px;
   z-index: 2;
 }
+@media screen and (max-width: 1439px) {
+  .cow {
+    max-width: 490px;
+  }
+  .cow img.cow_image {
+    width: 120px;
+    height: auto;
+  }
+  .cow img.hill_image {
+    width: 100%;
+    height: auto;
+  }
+}
 
 .active .cow {
   transform: translate(-64%, 44%);
@@ -180,9 +195,22 @@
 }
 .milka-title span:first-child {
   font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 .milka-title span:last-child {
   color: #fff;
+  font-family: "lorrach";
+}
+@media screen and (max-width: 1439px) {
+  .milka-title {
+    max-width: 560px;
+    font-size: 84px;
+    line-height: 54px;
+  }
+  .milka-title span {
+    font-size: 42.5px;
+  }
 }
 
 .milka-scrolldown {
@@ -195,15 +223,25 @@
   margin-left: -25px;
   background: none;
   cursor: pointer;
-  transform: rotate(0deg);
   transition: 1000ms ease 0s;
   border: none;
+  z-index: 2;
 }
 .milka-scrolldown.up {
   transform: rotate(180deg);
 }
+.milka-scrolldown.down {
+  transform: rotate(0deg);
+}
 .milka-scrolldown img {
   width: 100%;
+}
+@media screen and (max-width: 1439px) {
+  .milka-scrolldown {
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+  }
 }
 
 .section-about {
@@ -313,6 +351,11 @@
   height: 100%;
   padding: 20px 50px;
 }
+@media screen and (max-width: 1439px) {
+  .section-about .section-container {
+    padding: 20px 30px;
+  }
+}
 
 .about-text {
   display: flex;
@@ -328,17 +371,32 @@
 .about-text:first-child .about-text-content {
   margin-top: 30%;
 }
+@media screen and (max-width: 1439px) {
+  .about-text:first-child .about-text-content {
+    margin-top: 24%;
+  }
+}
 .about-text:nth-child(2) {
   justify-content: center;
 }
 .about-text:nth-child(2) .about-text-content {
   margin-bottom: 5%;
 }
+@media screen and (max-width: 1439px) {
+  .about-text:nth-child(2) .about-text-content {
+    margin-bottom: 10%;
+  }
+}
 
 .about-text-content {
   display: block;
   position: relative;
   max-width: 590px;
+}
+@media screen and (max-width: 1439px) {
+  .about-text-content {
+    max-width: 460px;
+  }
 }
 
 .milka-about-title {
@@ -359,6 +417,14 @@
   background: #776cb1;
   padding: 10px 12px 6px 12px;
 }
+@media screen and (max-width: 1439px) {
+  .milka-about-title {
+    font-size: 34px;
+  }
+  .milka-about-title span {
+    font-size: 29.6px;
+  }
+}
 
 .milka-subtitle {
   display: inline-block;
@@ -367,6 +433,12 @@
   line-height: 1.2;
   font-family: "Congenial";
   margin-top: 24px;
+}
+@media screen and (max-width: 1439px) {
+  .milka-subtitle {
+    font-size: 18px;
+    margin-top: 20px;
+  }
 }
 
 img.milka-ice-image {
@@ -381,6 +453,12 @@ img.milka-ice-image {
   display: block;
   position: absolute;
   bottom: 40px;
+}
+@media screen and (max-width: 1439px) {
+  .footer_logo {
+    width: 150px;
+    height: auto;
+  }
 }
 
 .copy {
