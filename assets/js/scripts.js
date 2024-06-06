@@ -77,16 +77,55 @@ const handleScroll = function (e) {
   handleScrollSettings(e, currentEl);
 };
 
+let startY;
+
+const handleTouchStart = function (e) {
+  const touch = e.touches[0];
+  startY = touch.clientY;
+};
+
+const handleTouchMove = function (e) {
+  const touch = e.touches[0];
+  const touchEl = e.target;
+  const currentY = touch.clientY;
+  const deltaY = startY - currentY;
+  const customEvent = {
+    deltaY,
+  };
+  if (deltaY > 0) {
+    console.log('Тянем вверх');
+  } else {
+    console.log('Тянем вниз');
+  }
+  const currentEl = touchEl.closest('[data-scrollpage]');
+
+  const slides = currentEl.querySelectorAll('[data-slide]');
+  let currentSlide = Number(currentEl.dataset.start);
+
+  const shouldLockBody =
+    (customEvent.deltaY > 0 && currentSlide < slides.length) || (customEvent.deltaY < 0 && currentSlide > 1);
+
+  if (shouldLockBody) {
+    e.preventDefault();
+  }
+
+  handleScrollSettings(customEvent, currentEl);
+};
+
 const scrollPageInit = () => {
   scrollSections.forEach(scrollBlock => {
     scrollBlock.addEventListener('wheel', handleScroll, { passive: false });
-    eventListeners.set(scrollBlock, handleScroll); // Сохраняем обработчик для этого элемента
+    scrollBlock.addEventListener('touchstart', handleTouchStart, { passive: true });
+    scrollBlock.addEventListener('touchmove', handleTouchMove, { passive: false });
+    eventListeners.set(scrollBlock, { handleScroll, handleTouchStart, handleTouchMove }); // Сохраняем обработчики для этого элемента
   });
 };
 
 const removeScrollEventListeners = () => {
-  eventListeners.forEach((handler, scrollBlock) => {
-    scrollBlock.removeEventListener('wheel', handler);
+  eventListeners.forEach((handlers, scrollBlock) => {
+    scrollBlock.removeEventListener('wheel', handlers.handleScroll);
+    scrollBlock.removeEventListener('touchstart', handlers.handleTouchStart);
+    scrollBlock.removeEventListener('touchmove', handlers.handleTouchMove);
   });
   eventListeners.clear(); // Очищаем Map после удаления обработчиков
 };

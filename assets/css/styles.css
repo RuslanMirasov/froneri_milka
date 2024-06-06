@@ -834,7 +834,7 @@ img.milka-ice-image {
 }
 @media screen and (max-width: 1023px) and (max-width: 767px), screen and (min-width: 1024px) and (orientation: portrait) and (max-width: 767px) {
   .about-text:first-child .about-text-content .milka-subtitle {
-    max-width: 250px;
+    max-width: 268px;
   }
 }
 @media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
