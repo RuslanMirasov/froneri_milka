@@ -92,11 +92,6 @@ const handleTouchMove = function (e) {
   const customEvent = {
     deltaY,
   };
-  if (deltaY > 0) {
-    console.log('Тянем вверх');
-  } else {
-    console.log('Тянем вниз');
-  }
   const currentEl = touchEl.closest('[data-scrollpage]');
 
   const slides = currentEl.querySelectorAll('[data-slide]');

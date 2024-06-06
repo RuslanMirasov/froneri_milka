@@ -730,6 +730,9 @@ img.milka-ice-image {
   .milka-about-title {
     line-height: 30px;
   }
+  .milka-about-title br {
+    display: block;
+  }
 }
 @media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
   .milka-about-title b,
@@ -745,6 +748,13 @@ img.milka-ice-image {
     font-size: 24px;
     line-height: 24px;
     padding: 8px 10px 6px 10px;
+  }
+}
+@media screen and (max-width: 1023px) and (max-width: 374px), screen and (min-width: 1024px) and (orientation: portrait) and (max-width: 374px) {
+  .milka-about-title b,
+.milka-about-title span {
+    font-size: 22px;
+    line-height: 24px;
   }
 }
 @media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
@@ -857,8 +867,9 @@ img.milka-ice-image {
 }
 @media screen and (max-width: 1023px) and (max-width: 767px), screen and (min-width: 1024px) and (orientation: portrait) and (max-width: 767px) {
   .about-text:nth-child(2) .about-text-content {
-    max-width: 100%;
+    max-width: 375px;
     padding: 0px 20px;
+    margin: 0;
   }
 }
 @media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
@@ -903,7 +914,7 @@ img.milka-ice-image {
     height: 40px;
     position: absolute;
     left: 50%;
-    bottom: 8%;
+    bottom: 10%;
     margin-left: -20px;
     background: none;
     cursor: pointer;
@@ -912,7 +923,7 @@ img.milka-ice-image {
     z-index: 2;
   }
 }
-@media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
+@media screen and (max-width: 1023px) and (max-width: 767px), screen and (min-width: 1024px) and (orientation: portrait) and (max-width: 767px) {
   .milka-footer {
     padding: 20px 20px 16px 20px;
     text-align: center;
