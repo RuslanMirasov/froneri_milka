@@ -41,7 +41,7 @@
     @media screen and (max-width: 767px) {
       height: 590px;
       min-height: 100vh;
-      padding: 0px 0px 16% 0px;
+      padding: 0px 0px 22% 0px;
       .section-container {
         padding: 0px 20px;
       }
@@ -260,7 +260,8 @@
     @media screen and (max-width: 767px) {
       width: 144px;
       margin-right: auto;
-      margin-top: 20px;
+      margin-top: 30px;
+      margin-bottom: 30px;
     }
   }
 
@@ -285,9 +286,15 @@
       img.milka-ice-image {
         max-width: 120%;
         margin: 0 auto;
+        @media screen and (max-width: 767px) {
+          max-width: 100%;
+        }
       }
       .milka-subtitle {
         max-width: 440px;
+        @media screen and (max-width: 767px) {
+          max-width: 250px;
+        }
       }
     }
   }
@@ -310,11 +317,11 @@
         max-width: 100%;
         padding: 0px 20px;
       }
-      img.milka-ice-image {
-        margin: 0 auto;
-      }
       .milka-subtitle {
         max-width: 480px;
+        @media screen and (max-width: 767px) {
+          max-width: 270px;
+        }
       }
     }
   }
@@ -346,7 +353,7 @@
     height: 40px;
     position: absolute;
     left: 50%;
-    bottom: 5%;
+    bottom: 8%;
     margin-left: -20px;
     background: none;
     cursor: pointer;
