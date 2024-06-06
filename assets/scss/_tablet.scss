@@ -1,0 +1,365 @@
+@media screen and (max-width: 1023px), screen and (min-width: 1024px) and (orientation: portrait) {
+  .milka-bg.text,
+  .milka-bg.field1,
+  .milka-bg.field2,
+  .milka-bg.sun,
+  .milka-bg.clouds,
+  .milka-bg.gora2 {
+    display: none;
+  }
+
+  [data-scrollpage],
+  .milka-bg img {
+    height: auto;
+  }
+
+  .milka-logo,
+  .gora1,
+  [data-rails],
+  .section-hero .section-container {
+    transform: translate(0px, 0%) !important;
+  }
+
+  .gora1 img {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    top: 0px;
+    left: 0px;
+    object-fit: cover;
+  }
+
+  .section-hero {
+    height: 100vh;
+    min-height: 1000px;
+    padding: 5% 30px 10% 30px;
+    .section-container {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media screen and (max-width: 767px) {
+      height: 590px;
+      min-height: 100vh;
+      padding: 0px 0px 16% 0px;
+      .section-container {
+        padding: 0px 20px;
+      }
+      @media screen and (orientation: landscape) {
+        min-height: 660px;
+        .gora1 img {
+          object-fit: fill;
+        }
+      }
+    }
+  }
+
+  .milka-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    width: 342px;
+    max-width: 342px;
+    margin-top: 20px;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 506px;
+      height: 76px;
+      background: url('../img/clouds_tablet_top.png') no-repeat center center;
+      background-size: cover;
+      top: 90%;
+    }
+    @media screen and (max-width: 767px) {
+      width: 300px;
+      &:before {
+        width: 290px;
+        height: 44px;
+        top: 90%;
+        right: 10%;
+      }
+    }
+  }
+
+  .milka-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    font-size: 83.17px;
+    line-height: 74.86px;
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 25%;
+    span {
+      font-size: 83.17px;
+      &:first-child {
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+      &:last-child {
+        color: #fff;
+        font-family: 'lorrach';
+      }
+    }
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 430px;
+      height: 148px;
+      background: url('../img/clouds_tablet_bottom.png') no-repeat center center;
+      background-size: cover;
+      top: 110%;
+      left: -10%;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 47.73px;
+      line-height: 42.96px;
+      margin-top: 2%;
+      margin-bottom: 25%;
+      span {
+        font-size: 47.73px;
+      }
+      &:before {
+        width: 246px;
+        height: 84px;
+        top: 105%;
+        left: 50%;
+        margin-left: -162px;
+      }
+    }
+  }
+
+  .cow {
+    max-width: 500px;
+    position: relative;
+    transform: translate(0%, 0%);
+    justify-content: flex-start;
+    img {
+      display: block;
+      &.cow_image {
+        width: 174px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        z-index: 2;
+      }
+      &.hill_image {
+        position: absolute;
+        width: 120%;
+        top: 50%;
+        right: 0%;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 320px;
+      img {
+        &.cow_image {
+          width: 100px;
+        }
+      }
+    }
+  }
+
+  .active .cow {
+    transform: translate(0%, 0%);
+  }
+
+  .section-about {
+    height: auto;
+    align-items: flex-start;
+    align-content: flex-start;
+    .section-container {
+      align-content: flex-start;
+      height: auto;
+      padding: 0;
+    }
+  }
+
+  .about-text {
+    align-content: flex-start;
+    width: 100%;
+    height: auto;
+    &:first-child {
+      align-content: flex-start;
+      .about-text-content {
+        margin-top: 0%;
+      }
+    }
+    &:nth-child(2) {
+      justify-content: flex-start;
+      .about-text-content {
+        margin-bottom: 0%;
+      }
+    }
+  }
+
+  .about-text-content {
+    max-width: 100%;
+    @media screen and (max-width: 1439px) {
+      max-width: 100%;
+    }
+  }
+
+  .milka-about-title {
+    max-width: 100%;
+    br {
+      display: none;
+    }
+    @media screen and (max-width: 767px) {
+      line-height: 30px;
+    }
+  }
+  .milka-about-title b,
+  .milka-about-title span {
+    font-size: 47.31px;
+    font-weight: 800;
+    line-height: 56.77px;
+    @media screen and (max-width: 767px) {
+      font-size: 24px;
+      line-height: 24px;
+      padding: 8px 10px 6px 10px;
+    }
+  }
+
+  .milka-subtitle {
+    font-size: 27.88px;
+    font-weight: 500;
+    line-height: 33.45px;
+    br {
+      display: none;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.2px;
+    }
+  }
+
+  img.milka-ice-image {
+    display: block;
+  }
+
+  .footer_logo {
+    position: relative;
+    bottom: 0px;
+    width: 164px;
+    height: auto;
+    margin-left: auto;
+    margin-bottom: 14px;
+    @media screen and (max-width: 1439px) {
+      width: 164px;
+    }
+    @media screen and (max-width: 767px) {
+      width: 144px;
+      margin-right: auto;
+      margin-top: 20px;
+    }
+  }
+
+  .about-text:first-child {
+    background: url('../img/tablet_bg2.jpg') no-repeat center top;
+    background-size: 100% auto;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 60%;
+    }
+    .about-text-content {
+      max-width: 654px;
+      padding: 0px 0px;
+      margin: 0 auto;
+      background: #69ab6b;
+      @media screen and (max-width: 767px) {
+        max-width: 100%;
+        padding: 0px 20px;
+      }
+      img.milka-ice-image {
+        max-width: 120%;
+        margin: 0 auto;
+      }
+      .milka-subtitle {
+        max-width: 440px;
+      }
+    }
+  }
+
+  .about-text:nth-child(2) {
+    background: url('../img/tablet_bg3.jpg') no-repeat center top;
+    background-size: 100% auto;
+    z-index: 2;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 55%;
+    }
+    .about-text-content {
+      max-width: 654px;
+      padding: 0px 0px;
+      margin: 0 auto;
+      @media screen and (max-width: 767px) {
+        max-width: 100%;
+        padding: 0px 20px;
+      }
+      img.milka-ice-image {
+        margin: 0 auto;
+      }
+      .milka-subtitle {
+        max-width: 480px;
+      }
+    }
+  }
+
+  .copy {
+    background: url('../img/tablet_bg4.jpg') no-repeat center top;
+    background-size: 100% auto;
+    padding: 0px 30px 20px 30px;
+    margin-top: -5%;
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 70%;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 0px 20px 20px 20px;
+      text-align: center;
+    }
+  }
+
+  .milka-scrolldown {
+    display: none;
+  }
+
+  .milka-scrolldown--tablet {
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    bottom: 5%;
+    margin-left: -20px;
+    background: none;
+    cursor: pointer;
+    transition: 1000ms ease 0s;
+    border: none;
+    z-index: 2;
+  }
+
+  .milka-footer {
+    padding: 20px 20px 16px 20px;
+    text-align: center;
+    a {
+      display: inline-block;
+    }
+  }
+}

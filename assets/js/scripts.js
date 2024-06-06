@@ -1,7 +1,9 @@
 const scrollSections = document.querySelectorAll('[data-scrollpage]');
 const milkaScrollBlock = document.querySelector('[data-scrollpage]');
 const milkaScrolldownBtn = document.querySelector('.milka-scrolldown');
+const milkaScrolldownTabletBtn = document.querySelector('.milka-scrolldown--tablet');
 const main = document.querySelector('main');
+const eventListeners = new Map(); // Для хранения ссылок на обработчики
 
 const scrollSet = {
   timing: 1000,
@@ -61,26 +63,49 @@ const bodyUnlocked = () => {
   main.style.overflowY = '';
 };
 
-scrollSections.forEach(scrollBlock => {
-  scrollBlock.addEventListener(
-    'wheel',
-    function (e) {
-      const currentEl = e.currentTarget;
-      const slides = currentEl.querySelectorAll('[data-slide]');
-      let currentSlide = Number(currentEl.dataset.start);
+const handleScroll = function (e) {
+  const currentEl = e.currentTarget;
+  const slides = currentEl.querySelectorAll('[data-slide]');
+  let currentSlide = Number(currentEl.dataset.start);
 
-      const shouldLockBody =
-        (e.deltaY > 0 && currentSlide < slides.length) || (e.deltaY < 0 && currentSlide > 1);
+  const shouldLockBody = (e.deltaY > 0 && currentSlide < slides.length) || (e.deltaY < 0 && currentSlide > 1);
 
-      if (shouldLockBody) {
-        e.preventDefault();
-      }
+  if (shouldLockBody) {
+    e.preventDefault();
+  }
 
-      handleScrollSettings(e, currentEl);
-    },
-    { passive: false }
+  handleScrollSettings(e, currentEl);
+};
+
+const scrollPageInit = () => {
+  scrollSections.forEach(scrollBlock => {
+    scrollBlock.addEventListener('wheel', handleScroll, { passive: false });
+    eventListeners.set(scrollBlock, handleScroll); // Сохраняем обработчик для этого элемента
+  });
+};
+
+const removeScrollEventListeners = () => {
+  eventListeners.forEach((handler, scrollBlock) => {
+    scrollBlock.removeEventListener('wheel', handler);
+  });
+  eventListeners.clear(); // Очищаем Map после удаления обработчиков
+};
+
+// Проверка медиазапроса
+function checkMediaQuery() {
+  const mediaQuery = window.matchMedia(
+    '(max-width: 1023px), (min-width: 1024px) and (orientation: portrait)'
   );
-});
+  return !mediaQuery.matches; // Возвращает true, если медиазапрос НЕ истинный
+}
+
+function handleResizeOrLoad() {
+  if (checkMediaQuery()) {
+    scrollPageInit();
+  } else {
+    removeScrollEventListeners();
+  }
+}
 
 const handleScrollChange = (element, slide) => {
   element.dataset.start = slide;
@@ -108,15 +133,28 @@ const handleScrollChange = (element, slide) => {
 };
 
 milkaScrolldownBtn.addEventListener('click', function () {
-  const btn = this;
-  if (btn.classList.contains('down')) {
-    btn.classList.remove('down');
-    btn.classList.add('up');
-    handleScrollChange(milkaScrollBlock, 2);
-    return;
+  if (checkMediaQuery()) {
+    const btn = this;
+    if (btn.classList.contains('down')) {
+      btn.classList.remove('down');
+      btn.classList.add('up');
+      handleScrollChange(milkaScrollBlock, 2);
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    btn.classList.remove('up');
+    btn.classList.add('down');
+    handleScrollChange(milkaScrollBlock, 1);
+  } else {
+    const aboutSection = document.querySelector('.section-about');
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
   }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  btn.classList.remove('up');
-  btn.classList.add('down');
-  handleScrollChange(milkaScrollBlock, 1);
 });
+
+milkaScrolldownTabletBtn.addEventListener('click', function () {
+  const aboutSection = document.querySelector('.section-about');
+  aboutSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+window.addEventListener('load', handleResizeOrLoad);
+window.addEventListener('resize', handleResizeOrLoad);

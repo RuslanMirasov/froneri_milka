@@ -130,6 +130,11 @@
   max-width: 38%;
   transform: translate(0%, -44%);
   transition: 1000ms ease 0s;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
   @media screen and (max-width: 1439px) {
     max-width: 342px;
   }
@@ -236,6 +241,13 @@
     width: 40px;
     height: 40px;
     bottom: 40px;
+  }
+}
+
+.milka-scrolldown--tablet {
+  display: none;
+  img {
+    width: 100%;
   }
 }
 
@@ -431,7 +443,7 @@ img.milka-ice-image {
 .footer_logo {
   display: block;
   position: absolute;
-  bottom: 40px;
+  bottom: 100%;
   @media screen and (max-width: 1439px) {
     width: 150px;
     height: auto;
@@ -440,6 +452,7 @@ img.milka-ice-image {
 
 .copy {
   display: block;
+  position: relative;
   width: 100%;
   text-align: right;
   font-family: 'Congenial';
@@ -457,3 +470,5 @@ img.milka-ice-image {
     display: block;
   }
 }
+
+@import 'tablet';
